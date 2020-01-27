@@ -1,0 +1,1 @@
+Uma pessoa pode ter vários telefones e vários emails, porém, pode conter somente uma CNH.
