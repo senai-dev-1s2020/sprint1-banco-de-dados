@@ -1,0 +1,3 @@
+Uma empresa possui vários veículos
+Um veículo possui marca(gm, ford, fiat), modelo(onix, fiesta, argo) e placa
+Um Cliente (cpf, nome) aluga um ou mais veículos
