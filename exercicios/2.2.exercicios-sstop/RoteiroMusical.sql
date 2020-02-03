@@ -32,9 +32,3 @@ DROP TABLE Artistas;
 
 --APAGAR BANCO DE DADOS
 DROP DATABASE RoteiroMusical;
-
-
-
-
-
-

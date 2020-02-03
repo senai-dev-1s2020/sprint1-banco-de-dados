@@ -1,3 +1,15 @@
 Uma empresa possui vários veículos
 Um veículo possui marca(gm, ford, fiat), modelo(onix, fiesta, argo) e placa
 Um Cliente (cpf, nome) aluga um ou mais veículos
+
+DQL
+
+- Exibir todos os alugueis com seus respectivos campos preenchidos (sem ID)
+
+
+Entregas:
+
+- Conceitual, Lógico e Físico (Excel)
+- Optus-01-DDL.sql
+- Optus-02-DML.sql
+- Optus-03-DQL.sql

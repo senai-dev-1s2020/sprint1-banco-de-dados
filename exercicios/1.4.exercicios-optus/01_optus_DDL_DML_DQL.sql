@@ -53,7 +53,6 @@ DROP TABLE Albuns;
 
 -- DML LINGUAGEM DE MANIPULACAO DE DADOS
 
-
 -- COMANDO DE INSERIR DADOS 
 INSERT INTO Estilos (Nome)
 VALUES ('Pagode'),('Samba'),('Rock');

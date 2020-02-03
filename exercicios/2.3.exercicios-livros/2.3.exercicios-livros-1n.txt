@@ -21,4 +21,12 @@ Desafios Extras
 - Incluir uma coluna para incluir a sinopse dos livros;
 - Incluir uma coluna de data de lançamento do livro;
 - Incluir uma coluna para identificar que o livro ainda está sendo veiculado;
-- Alterar o exercício de livros N1 para que o livro possa receber 1 ou mais gêneros.
+- Alterar o exercício de livros para que o livro possa receber 1 ou mais gêneros.
+
+
+Entregas
+
+- Conceitual, Lógico e Físico (Excel)
+- Livros-01-DDL.sql
+- Livros-02-DML.sql
+- Livros-03-DQL.sql

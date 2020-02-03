@@ -1,0 +1,28 @@
+O cliente SSolve deseja realizar o cadastro de seus clientes (nome fantasia, cnpj, razão social e endereço completo) para realizar o controle de quais serviços são prestados para cada um deles.
+Ele atua com serviços de manutenção.
+Para cada item de serviço que ele deseja cadastrar, ele também quer saber qual o cômodo da casa que ele realizou o serviço.
+Por exemplo:
+Realizou a manutenção do chuveiro no banheiro.
+Trocou a luz da área de serviço.
+E cada serviço que ele irá fazer, ele irá atribuir um determinado preço.
+
+Um exemplo:
+“Realizei a manutenção da luz da cozinha para a cliente Joana, e o preço que eu irei cobrar será 50 reais.”
+
+Além disso, ele quer saber quando o serviço foi iniciado e o quando o serviço foi finalizado.
+E o serviço pode ser realizado por um ou mais funcionários.
+
+DML
+
+- Cadastrar informações de serviços (realizados ou a fazer)
+
+DQL
+
+- Exibir todos os serviços com seus respectivos campos preenchidos (sem ID)
+
+Entregas:
+
+- Conceitual, Lógico e Físico (Excel)
+- Optus-01-DDL.sql
+- Optus-02-DML.sql
+- Optus-03-DQL.sql

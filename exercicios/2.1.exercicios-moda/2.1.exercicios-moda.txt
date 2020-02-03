@@ -1,0 +1,34 @@
+Uma determinada camiseta pode pertencer somente a uma marca (ex.: Khelf), porém, pode ter várias cores (ex.: branca, vermelha, azul, roxo e verde) e diferentes tamanhos(ex.: P, M, G e GG).
+
+
+DDL
+- Criar todas as tabelas de acordo com o proposto na modelagem da pasta exercicios-moda.
+
+DML
+- Inserir as cores e os tamanhos das camisetas.
+- Inserir 3 marcas de sua escolha.
+- Inserir 5 camisetas de sua ecolha.
+- Alterar a marca de 2 camisetas.
+- Deletara camiseta com maior id.
+
+DQL
+- Selecionar todas as camisetas.
+- Selecionar todas as marcas.
+- Selecionar todas as cores.
+- Selecionar todas as camisetas e suas respectivas marcas.
+- Selecionar todas as camisetas e suas respectivas cores.
+- Selecionar todas as camisetas e seus tamanhos
+
+EXTRAS
+- Alterar a tabela de marcas adicionando as colunas de quantidade de lojas e data de criação da marca.
+- Alterar a tabela de camisetas adicionando uma coluna pra informar se pode ser lavada na maquina.
+- Alterara table de tamanhos para adicionar a coluna de medidas ex."30x30"
+
+
+
+Entregas:
+
+- Conceitual, Lógico e Físico (Excel)
+- Optus-01-DDL.sql
+- Optus-02-DML.sql
+- Optus-03-DQL.sql

@@ -1,0 +1,30 @@
+Um funcionário está vinculado a um departamento e um funcionário pode possuir uma ou mais habilidades.
+
+
+DDL
+- Criar todas as tabelas de acordo com o script passado
+
+DML
+- Inserir 3 habilidades de sua escolha.
+- Inserir 5 Funcionários de sua ecolha.
+- Alterar o salário de 1 Funcionário.
+
+DQL
+- Selecionar todos os funcionários.
+- Selecionar todas as habilidade.
+- Selecionar todos os departamentos.
+- Selecionar todos os funcionários com seus respectivos departamentos
+
+EXTRAS
+- Alterar a tabela de funcionários adicionando a coluna de função.
+- Alterar a tabela de habilidades adicionando a coluna de descrição.
+- Selecionar um funcionário e suas habilidades
+
+
+
+Entregas:
+
+- Conceitual, Lógico e Físico (Excel)
+- Optus-01-DDL.sql
+- Optus-02-DML.sql
+- Optus-03-DQL.sql
