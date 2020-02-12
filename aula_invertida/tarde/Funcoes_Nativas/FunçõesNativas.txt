@@ -1,0 +1,3 @@
+https://docs.microsoft.com/pt-br/sql/t-sql/functions/functions?view=sql-server-ver15
+
+https://www.devmedia.com.br/funcoes-e-procedures-auxiliares-no-sql-server/13550

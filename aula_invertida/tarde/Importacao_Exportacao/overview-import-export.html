@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus theme-light" lang="pt-br" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="false" data-target="docs" x-ms-format-detection="none">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:title" content="Importar e exportar dados do SQL Server e do Banco de Dados SQL do Azure - SQL Server" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.microsoft.com/pt-br/sql/relational-databases/import-export/overview-import-export" />
+
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@docsmsft" />
+
+		<meta name="toc_preview" content="true">
+<meta name="manager" content="jroth">
+<meta name="breadcrumb_path" content="../../breadcrumb/toc.json?view=sql-server-ver15">
+<meta name="uhfHeaderId" content="MSDocsHeader-DocsSQL">
+<meta name="ms.openlocfilehash" content="721347cd8b61497f5ff2c1beeb058a6457c37708">
+<meta name="ms.custom" content="seo-lt-2019">
+<meta name="ms.contentlocale" content="pt-BR">
+<meta name="ms.prod_service" content="database-engine, sql-database, sql-data-warehouse, pdw">
+<meta name="author" content="MashaMSFT">
+<meta name="ms.lasthandoff" content="02/01/2020">
+<meta name="ms.author" content="mathoma">
+<meta name="ms.translationtype" content="HT">
+<meta name="ms.topic" content="conceptual">
+<meta name="ms.sourcegitcommit" content="b2e81cb349eecacee91cd3766410ffb3677ad7e2">
+<meta name="ms.date" content="10/27/2017">
+<meta name="ms.technology" content="data-movement">
+<meta name="ms.locfileid" content="76761860">
+<meta name="ms.prod" content="sql">
+<meta name="ms.reviewer" content="">
+<meta name="search.ms_sitename" content="Docs">
+<meta name="search.ms_docsetname" content="sql-content">
+<meta name="version" content="0">
+<meta name="locale" content="pt-br">
+<meta name="site_name" content="Docs">
+<meta name="search.ms_product" content="SQL">
+<meta name="depot_name" content="SQL.sql-content">
+<meta name="updated_at" content="2020-02-05 09:41 PM">
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/sql-docs-pr.pt-br/blob/d19f584b9de3f63af0b9b341d4c3bf879cbbb78d/docs/relational-databases/import-export/overview-import-export.md">
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/sql-docs-pr.pt-br/blob/live-sxs/docs/relational-databases/import-export/overview-import-export.md">
+<meta name="document_id" content="dba49af1-3e8f-3dd2-c979-b58df139e183">
+<meta name="document_version_independent_id" content="6d4b133e-09ba-a2de-9cee-f4f4ad156bc3">
+<meta name="monikers" content="aps-pdw-2016">
+<meta name="monikers" content="aps-pdw-2016-au7">
+<meta name="monikers" content="azuresqldb-current">
+<meta name="monikers" content="azure-sqldw-latest">
+<meta name="monikers" content="sql-server-2016">
+<meta name="monikers" content="sql-server-2017">
+<meta name="monikers" content="sql-server-ver15">
+<meta name="monikers" content="sqlallproducts-allversions">
+<meta name="monikers" content="sql-server-linux-2017">
+<meta name="monikers" content="sql-server-linux-ver15">
+<meta name="monikers" content="azuresqldb-mi-current">
+<meta name="page_type" content="conceptual">
+<meta name="toc_rel" content="../../toc.json?view=sql-server-ver15">
+<meta name="word_count" content="1091">
+
+	<meta name="scope" content="sql" />
+<link href="https://docs.microsoft.com/pt-br/sql/relational-databases/import-export/overview-import-export" rel="canonical">
+	<title>Importar e exportar dados do SQL Server e do Banco de Dados SQL do Azure - SQL Server | Microsoft Docs</title>
+
+		<link rel="stylesheet" href="/_themes/docs.theme/master/pt-br/_themes/styles/6fd53529.site-ltr.css ">
+
+	<link rel="stylesheet" href="/_themes/docs.theme/master/pt-br/_themes/styles/2488a4dd.conceptual.css ">
+
+
+	<script>
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			azureHeaderLocale: 'pt-br',
+			contentLocale: 'pt-br',
+			contentDir: 'ltr',
+			userLocale: 'pt-br',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+
+			},
+			hasComments: true,
+			showFeedbackReport: false,
+			binaryRatingUpdate : false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'GitHub',
+			feedbackGitHubRepo: 'MicrosoftDocs/sql-docs.pt-br',
+			feedbackProductUrl: 'https://feedback.azure.com/forums/908035-sql-server/',
+			contentGitUrl: 'https://github.com/MicrosoftDocs/sql-docs.pt-br/blob/live/docs/relational-databases/import-export/overview-import-export.md',
+			extendBreadcrumb: true,
+		},
+		functions:{}
+	};
+	if (!('Promise' in window && 'resolve' in window.Promise && 'reject' in window.Promise && 'all' in window.Promise && 'race' in window.Promise)) {
+		document.write('<script src="https://static.docs.com/ui/third-party/bluebird/3.5.0/bluebird.min.js" integrity="sha384-aD4BDeDGeLXLpPK4yKeqtZQa9dv4a/7mQ+4L5vwshIYH1Mc2BrXvHd32iHzYCQy5" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof fetch !== 'function') {
+		document.write('<script src="https://static.docs.com/ui/third-party/fetch/3.0.0/fetch.umd.min.js" integrity="sha384-EQIXrC5K2+7X8nGgLkB995I0/6jfAvvyG1ieZ+WYGxgJHFMD/alsG9fSDWvzb5Y1" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof HTMLTemplateElement === 'undefined') {
+		document.write('<script src="https://static.docs.com/ui/third-party/template/1.4.0/template.min.js" integrity="sha384-1zKzI6ldTVHMU7n0W2HpE/lhHI+UG4D9IIaxbj3kT2UhCWicdTuJkTtnKuu0CQzN" crossorigin="anonymous"><\/script>');
+	}
+	if (typeof URL !== 'function') {
+		document.write('<script src="https://static.docs.com/ui/third-party/url/0.5.7/url.min.js" integrity="sha384-vn7xBMtpSTfzaTRWxj0kVq0UcsbBrTOgZ/M1ISHqe1V358elYva+lfiEC+T8jLPc" crossorigin="anonymous"><\/script>');
+	}
+	</script>
+
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+		<script src="/_themes/docs.theme/master/pt-br/_themes/scripts/8a27cbf9.index-docs.js"></script>
+
+</head>
+
+<body lang="pt-br" dir="ltr">
+<div class="header-holder has-default-focus">
+	<a href="#main" class="skip-to-main-link visually-hidden-until-focused is-fixed has-inner-focus focus-visible has-top-zero has-left-zero has-right-zero has-padding-medium has-text-centered has-body-background-medium" tabindex="1">Avançar para o conteúdo principal</a>
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+	<div class="nav-bar">
+		<button class="nav-bar-burger" aria-label="Navegação global" aria-controls="nav-bar-mobile-nav" aria-expanded="false">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<nav class="nav-bar-mobile-nav" role="navigation" id="nav-bar-mobile-nav" aria-label="Global" hidden="">
+		</nav>
+		<a class="nav-bar-button" itemprop="url" href="https://www.microsoft.com" aria-label="Microsoft">
+			<div class="nav-bar-logo has-background-image theme-display is-light" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+			<div class="nav-bar-logo has-background-image theme-display is-dark is-high-contrast" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+		</a>
+		<nav class="nav-bar-nav" role="navigation" aria-label="Global">
+		</nav>
+		<span class="nav-bar-spacer"></span>
+		<div class="nav-bar-item is-invisible"> <!-- For Forums mobile layout rendering -->
+			<button id="form-expander" class="nav-bar-button has-hover-underline has-margin-left-extra-small"></button>
+		</div>
+	</div>
+</header>		</div>
+		<div class="content-header uhf-container has-padding has-default-focus" data-bi-name="content-header">
+			<nav class="has-padding-none-mobile has-flex-grow" data-bi-name="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList" role="navigation" aria-label="Trilha">
+				<ul id="page-breadcrumbs" class="breadcrumbs">
+				</ul>
+			</nav>
+		<div class="content-header-controls">
+			<button type="button" class="contents-button button" data-bi-name="contents-expand" aria-haspopup="true">
+				<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+				<span>Sumário</span>
+			</button>
+		</div>
+		<div class="content-header-controls exit-focus">
+			<button type="button" class="ap-collapse-behavior ap-expanded button" data-bi-name="ap-collapse" aria-controls="action-panel">
+				<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+				<span>Sair do modo de foco</span>
+			</button>
+		</div>
+		<div class="is-size-7 is-flex-touch has-flex-justify-content-space-between-touch has-flex-grow has-padding-none has-padding-none-mobile">
+			<ul class="action-list has-flex-justify-content-start has-flex-justify-content-end-tablet is-flex is-flex-row has-flex-wrap has-flex-grow is-unstyled">
+				<li>
+					<button type="button" class="bookmark button is-text has-inner-focus is-small is-icon-only-touch" data-list-type="bookmarks" data-bi-name="bookmark" title="Marcar esta página com um indicador">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-single-bookmark"></span>
+						</span>
+						<span class="bookmark-status is-visually-hidden-touch is-hidden-portrait">Indicador</span>
+					</button>
+				</li>
+						<li>
+							<a href="#feedback" class="button is-text has-inner-focus is-small is-icon-only-touch" data-bi-name="comments" title="Enviar comentários sobre esta página">
+								<span class="icon">
+									<span class="docon docon-comment-lines" aria-hidden="true"></span>
+								</span>
+								<span class="is-visually-hidden-touch is-hidden-portrait">Comentários</span>
+							</a>
+						</li>
+							<li id="contenteditbtn">
+									<a href="https://github.com/MicrosoftDocs/sql-docs.pt-br/blob/live/docs/relational-databases/import-export/overview-import-export.md" class="button is-text has-inner-focus is-icon-only-touch is-small" title="Editar Este Documento" data-bi-name="edit" data-original_content_git_url="https://github.com/MicrosoftDocs/sql-docs-pr.pt-br/blob/live-sxs/docs/relational-databases/import-export/overview-import-export.md" data-original_content_git_url_template="" data-pr_repo="" data-pr_branch="">
+									<span class="icon">
+										<span class="docon docon-edit-outline" aria-hidden="true"></span>
+									</span>
+									<span class="is-visually-hidden-touch is-hidden-portrait">Editar</span>
+								</a>
+							</li>
+				<li>
+<div class="sharing dropdown has-caret">
+	<button class="dropdown-trigger button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small is-icon-only-touch" aria-controls="sharing-menu" aria-expanded="false" title="Compartilhar Este Documento" data-bi-name="share">
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-sharing"></span>
+		</span>
+		<span class="is-visually-hidden-touch is-hidden-portrait">Compartilhar</span>
+	</button>
+	<div class="dropdown-menu has-padding-small" id="sharing-menu">
+		<ul data-bi-name="share-links">
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-twitter" data-bi-name="twitter">
+					<span class="icon">
+						<span class="docon docon-brand-twitter has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Twitter</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-linkedin" data-bi-name="linkedin">
+					<span class="icon">
+						<span class="docon docon-brand-linkedin has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>LinkedIn</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-facebook" data-bi-name="facebook">
+					<span class="icon">
+						<span class="docon docon-brand-facebook has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Facebook</span>
+				</a>
+			</li>
+			<li>
+				<a class="button is-text is-fullwidth has-flex-justify-content-start has-inner-focus is-small share-email" data-bi-name="email">
+					<span class="icon">
+						<span class="docon docon-mail-message-fill has-text-primary" aria-hidden="true"></span>
+					</span>
+					<span>Email</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>				</li>
+				<li>
+<div class="dropdown has-caret">
+	<button class="dropdown-trigger button is-text is-small is-icon-only-touch has-inner-focus"
+		aria-controls="theme-menu" aria-expanded="false" title="Tema" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span class="is-visually-hidden-touch is-hidden-portrait">Tema</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector has-padding-small">
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start"
+					data-theme-to="light">
+					<span class="theme-light has-margin-right-small">
+						<span
+							class="theme-selector-icon css-variable-support has-border is-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Claro					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start"
+					data-theme-to="dark">
+					<span class="theme-dark has-margin-right-small">
+						<span
+							class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Escuro					</span>
+				</button>
+			</li>
+			<li class="theme is-block">
+				<button class="button is-text is-small theme-control is-fullwidth has-flex-justify-content-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast has-margin-right-small">
+						<span
+							class="has-border theme-selector-icon css-variable-support is-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span role="menuitem">
+Alto contraste					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>				</li>
+				<li>
+					<a class="docs-sign-in auth-status-determined not-authenticated button is-text has-inner-focus has-text-primary is-small" href="#">Entrar</a>
+					<div class="dropdown has-caret auth-status-determined authenticated">
+						<button class="dropdown-trigger button is-text has-inner-focus is-small is-icon-only-touch has-inner-focus" aria-label="Sua conta" aria-controls="user-menu" aria-expanded="false">
+							<span class="icon" aria-hidden="true">
+								<span class="image">
+									<img class="has-body-background-medium is-rounded" data-profile-property="avatarThumbnailUrl">
+								</span>
+							</span>
+							<span class="is-inline-truncated has-margin-left-small" data-profile-property="userName"></span>
+						</button>
+						<div class="dropdown-menu box" id="user-menu" role="menu">
+							<div class="media is-user-dir">
+								<div class="media-left">
+									<span class="image is-64x64" aria-hidden="true">
+										<img class="has-body-background-medium is-rounded" data-profile-property="avatarUrl">
+									</span>
+								</div>
+								<div class="media-content">
+									<p class="title">
+										<span class="is-inline-truncated has-max-width-200" data-profile-property="userName"></span>
+									</p>
+									<p class="subtitle has-margin-bottom-none">
+										<span class="is-inline-truncated has-max-width-200" data-profile-property="upn"></span>
+									</p>
+									<ul class="is-unstyled has-margin-none has-margin-top-small">
+										<li><a href="/profile" data-profile-property="profileUrl">Perfil</a></li>
+										<li><a href="/profile" data-profile-property="bookmarksUrl">Indicadores</a></li>
+										<li><a href="/profile" data-profile-property="collectionsUrl">Coleções</a></li>
+										<li><a class="docs-sign-out" href="#">Sair</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<button type="button" class="contents-button button is-small is-text is-hidden-tablet has-inner-focus is-hidden-tablet" aria-label="Sumário" data-bi-name="contents-expand-">
+				<span class="icon">
+					<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+				</span>
+				<span>Contents</span>
+			</button>
+		</div>
+	</div>
+
+		<div id="banner-holder" class="has-default-focus has-overflow-hidden">
+		</div>
+
+	<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus"></div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-top-padding  has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="is-fixed is-flex is-flex-column" role="navigation" aria-label="Primário"></nav>
+			</div>
+
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+				<div id="main-column" class="column  is-full is-four-fifths-desktop ">
+
+					<main id="main" role="main" class="content " data-bi-name="content" lang="pt-br" dir="ltr">
+
+
+
+						<h1 id="import-and-export-data-from-sql-server-and-azure-sql-database" sourcefile="relational-databases/import-export/overview-import-export.md" sourcestartlinenumber="20"><span data-ttu-id="044ed-102">Importar e exportar dados do SQL Server e do Banco de Dados SQL do Azure</span><span class="sxs-lookup"><span data-stu-id="044ed-102">Import and export data from SQL Server and Azure SQL Database</span></span></h1>
+
+						<ul class="metadata page-metadata" data-bi-name="page info" lang="pt-br" dir="ltr">
+							<li class="displayDate loading">
+								<time role="presentation" datetime="2017-10-27T00:00:00.000Z" data-article-date-source="ms.date">10/27/2017</time>
+							</li>
+								<li class="readingTime">5 minutos para ler</li>
+							<li class="contributors-holder">
+								<a class="has-inner-focus" href="https://github.com/MicrosoftDocs/sql-docs.pt-br/blob/live/docs/relational-databases/import-export/overview-import-export.md" title="3 Colaboradores" aria-label="3 Colaboradores">
+									<ul class="contributors" data-bi-name="contributors" aria-hidden="true">
+												<li><img src="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/images/contributor.svg" data-src="https://github.com/MashaMSFT.png?size=32" role="presentation"/></li>
+												<li><img src="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/images/contributor.svg" data-src="https://github.com/olprod.png?size=32" role="presentation"/></li>
+												<li><img src="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/images/contributor.svg" data-src="https://github.com/OpenLocalizationService.png?size=32" role="presentation"/></li>
+									</ul>
+								</a>
+							</li>
+
+						</ul>
+
+						<nav id="center-doc-outline" class="doc-outline is-hidden-desktop" data-bi-name="intopic toc" role="navigation" aria-label="Estrutura de tópicos do artigo">
+							<h3>Neste artigo</h3>
+						</nav>
+
+
+						<!-- <content> -->
+							
+<p><span data-ttu-id="2d460-101"><token><strong>APLICA-SE A:</strong> <img src="../../includes/media/yes.png?view=sql-server-ver15" alt="sim" data-linktype="relative-path">SQL Server <img src="../../includes/media/yes.png?view=sql-server-ver15" alt="sim" data-linktype="relative-path">Banco de Dados SQL do Azure <img src="../../includes/media/yes.png?view=sql-server-ver15" alt="sim" data-linktype="relative-path">Azure Synapse Analytics (SQL DW) <img src="../../includes/media/yes.png?view=sql-server-ver15" alt="sim" data-linktype="relative-path">Parallel Data Warehouse </token></span><span class="sxs-lookup"><span data-stu-id="2d460-101"><token><strong>APPLIES TO:</strong> <img src="../../includes/media/yes.png?view=sql-server-ver15" alt="yes" data-linktype="relative-path">SQL Server <img src="../../includes/media/yes.png?view=sql-server-ver15" alt="yes" data-linktype="relative-path">Azure SQL Database <img src="../../includes/media/yes.png?view=sql-server-ver15" alt="yes" data-linktype="relative-path">Azure Synapse Analytics (SQL DW) <img src="../../includes/media/yes.png?view=sql-server-ver15" alt="yes" data-linktype="relative-path">Parallel Data Warehouse </token></span></span></p>
+
+<p><span data-ttu-id="044ed-103">Use uma variedade de métodos para importar e exportar dados do SQL Server e do Banco de Dados SQL do Azure.</span><span class="sxs-lookup"><span data-stu-id="044ed-103">You can use a variety of methods to import data to, and export data from, SQL Server and Azure SQL Database.</span></span> <span data-ttu-id="044ed-104">Esses métodos incluem instruções Transact-SQL, ferramentas de linha de comando e assistentes.</span><span class="sxs-lookup"><span data-stu-id="044ed-104">These methods include Transact-SQL statements, command-line tools, and wizards.</span></span></p>
+<p><span data-ttu-id="044ed-105">Também importe e exporte dados em uma variedade de formatos.</span><span class="sxs-lookup"><span data-stu-id="044ed-105">You can also import and export data in a variety of data formats.</span></span> <span data-ttu-id="044ed-106">Esses formatos incluem arquivos simples, Excel, os principais bancos de dados relacionais e vários serviços de nuvem.</span><span class="sxs-lookup"><span data-stu-id="044ed-106">These formats include flat files, Excel, major relational databases, and various cloud services.</span></span></p>
+<h2 id="methods-for-importing-and-exporting-data"><span data-ttu-id="044ed-107">Métodos para importar e exportar dados</span><span class="sxs-lookup"><span data-stu-id="044ed-107">Methods for importing and exporting data</span></span></h2>
+<h3 id="use-transact-sql-statements"><span data-ttu-id="044ed-108">Usar instruções Transact-SQL</span><span class="sxs-lookup"><span data-stu-id="044ed-108">Use Transact-SQL statements</span></span></h3>
+<p><span data-ttu-id="044ed-109">Importe dados com os comandos <code>BULK INSERT</code> ou <code>OPENROWSET(BULK...)</code>.</span><span class="sxs-lookup"><span data-stu-id="044ed-109">You can import data with the <code>BULK INSERT</code> or the <code>OPENROWSET(BULK...)</code> commands.</span></span> <span data-ttu-id="044ed-110">Normalmente, você executa esses comandos no SSMS (SQL Server Management Studio).</span><span class="sxs-lookup"><span data-stu-id="044ed-110">Typically you run these commands in SQL Server Management Studio (SSMS).</span></span> <span data-ttu-id="044ed-111">Para obter mais informações, consulte <a href="import-bulk-data-by-using-bulk-insert-or-openrowset-bulk-sql-server?view=sql-server-ver15" data-linktype="relative-path">Importar dados em massa usando BULK INSERT ou OPENROWSET(BULK...)</a>.</span><span class="sxs-lookup"><span data-stu-id="044ed-111">For more info, see <a href="import-bulk-data-by-using-bulk-insert-or-openrowset-bulk-sql-server?view=sql-server-ver15" data-linktype="relative-path">Import Bulk Data by Using BULK INSERT or OPENROWSET(BULK...)</a>.</span></span></p>
+<h3 id="use-bcp-from-the-command-prompt"><span data-ttu-id="044ed-112">Usar o BCP no prompt de comando</span><span class="sxs-lookup"><span data-stu-id="044ed-112">Use BCP from the command prompt</span></span></h3>
+<p><span data-ttu-id="044ed-113">Importe e exporte dados com o utilitário de linha de comando BCP.</span><span class="sxs-lookup"><span data-stu-id="044ed-113">You can import and export data with the BCP command-line utility.</span></span> <span data-ttu-id="044ed-114">Para obter mais informações, consulte <a href="import-and-export-bulk-data-by-using-the-bcp-utility-sql-server?view=sql-server-ver15" data-linktype="relative-path">Importar e exportar dados em massa usando o utilitário BCP</a>.</span><span class="sxs-lookup"><span data-stu-id="044ed-114">For more info, see <a href="import-and-export-bulk-data-by-using-the-bcp-utility-sql-server?view=sql-server-ver15" data-linktype="relative-path">Import and Export Bulk Data by Using the bcp Utility</a>.</span></span></p>
+<h3 id="use-the-import-flat-file-wizard"><span data-ttu-id="044ed-115">Usar o Assistente Importar Arquivo Simples</span><span class="sxs-lookup"><span data-stu-id="044ed-115">Use the Import Flat File Wizard</span></span></h3>
+<p><span data-ttu-id="044ed-116">Caso não precise de todas as opções de configuração disponíveis no Assistente de Importação e Exportação e em outras ferramentas, você pode importar um arquivo de texto para o SQL Server usando o <strong>Assistente Importar Arquivo Simples</strong> no SQL Server Management Studio.</span><span class="sxs-lookup"><span data-stu-id="044ed-116">If you don't need all the configuration options available in the Import and Export Wizard and other tools, you can import a text file into SQL Server by using the <strong>Import Flat File Wizard</strong> in SQL Server Management Studio (SSMS).</span></span> <span data-ttu-id="044ed-117">Para obter mais informações, confira os seguintes artigos:</span><span class="sxs-lookup"><span data-stu-id="044ed-117">For more info, see the following articles:</span></span></p>
+<ul>
+<li><a href="import-flat-file-wizard?view=sql-server-ver15" data-linktype="relative-path"><span data-ttu-id="044ed-118">Assistente Importar Arquivo Simples para SQL</span><span class="sxs-lookup"><span data-stu-id="044ed-118">Import Flat File to SQL Wizard</span></span></a></li>
+<li><a href="https://blogs.technet.microsoft.com/dataplatforminsider/2017/10/10/whats-new-in-sql-server-management-studio-17-3/" data-linktype="external"><span data-ttu-id="044ed-119">Novidades do SQL Server Management Studio 17.3 </span><span class="sxs-lookup"><span data-stu-id="044ed-119">What's new in SQL Server Management Studio 17.3 </span></span></a></li>
+<li><a href="https://channel9.msdn.com/Shows/Data-Exposed/Introducing-the-new-Import-Flat-File-Wizard-in-SSMS-173" data-linktype="external"><span data-ttu-id="044ed-120">Apresentamos os novo Assistente Importar Arquivo Simples no SQL Server Management Studio 17.3</span><span class="sxs-lookup"><span data-stu-id="044ed-120">Introducing the new Import Flat File Wizard in SSMS 17.3</span></span></a></li>
+</ul>
+<h3 id="use-the-sql-server-import-and-export-wizard"><span data-ttu-id="044ed-121">Usar o Assistente para Importação e Exportação do SQL Server</span><span class="sxs-lookup"><span data-stu-id="044ed-121">Use the SQL Server Import and Export Wizard</span></span></h3>
+<p><span data-ttu-id="044ed-122">Importe ou exporte dados de uma variedade de fontes e destinos com o Assistente para Importação e Exportação do SQL Server.</span><span class="sxs-lookup"><span data-stu-id="044ed-122">You can import data to, or export data from, a variety of sources and destinations with the SQL Server Import and Export Wizard.</span></span> <span data-ttu-id="044ed-123">Para usar o assistente, você deve ter o SSIS (SQL Server Integration Services) ou o SSDT (SQL Server Data Tools) instalado.</span><span class="sxs-lookup"><span data-stu-id="044ed-123">To use the wizard, you must have SQL Server Integration Services (SSIS) or SQL Server Data Tools (SSDT) installed.</span></span> <span data-ttu-id="044ed-124">Para obter mais informações, consulte <a href="../../integration-services/import-export-data/import-and-export-data-with-the-sql-server-import-and-export-wizard?view=sql-server-ver15" data-linktype="relative-path">Importar e exportar dados com o Assistente para Importação e Exportação do SQL Server</a>.</span><span class="sxs-lookup"><span data-stu-id="044ed-124">For more info, see <a href="../../integration-services/import-export-data/import-and-export-data-with-the-sql-server-import-and-export-wizard?view=sql-server-ver15" data-linktype="relative-path">Import and Export Data with the SQL Server Import and Export Wizard</a>.</span></span></p>
+<h3 id="design-your-own-import-or-export"><span data-ttu-id="044ed-125">Criar sua própria importação ou exportação</span><span class="sxs-lookup"><span data-stu-id="044ed-125">Design your own import or export</span></span></h3>
+<p><span data-ttu-id="044ed-126">Se desejar criar uma importação de dados personalizada, use um dos seguintes recursos ou serviços:</span><span class="sxs-lookup"><span data-stu-id="044ed-126">If you want to design a custom data import, you can use one of the following features or services:</span></span></p>
+<ul>
+<li><span data-ttu-id="044ed-127">SQL Server Integration Services.</span><span class="sxs-lookup"><span data-stu-id="044ed-127">SQL Server Integration Services.</span></span> <span data-ttu-id="044ed-128">Para obter mais informações, consulte <a href="../../integration-services/sql-server-integration-services?view=sql-server-ver15" data-linktype="relative-path">SQL Server Integration Services</a>.</span><span class="sxs-lookup"><span data-stu-id="044ed-128">For more info, see <a href="../../integration-services/sql-server-integration-services?view=sql-server-ver15" data-linktype="relative-path">SQL Server Integration Services</a>.</span></span></li>
+<li><span data-ttu-id="044ed-129">Azure Data Factory.</span><span class="sxs-lookup"><span data-stu-id="044ed-129">Azure Data Factory.</span></span> <span data-ttu-id="044ed-130">Para obter mais informações, consulte <a href="https://docs.microsoft.com/azure/data-factory/data-factory-introduction" data-linktype="external">Introdução ao Azure Data Factory</a>.</span><span class="sxs-lookup"><span data-stu-id="044ed-130">For more info, see <a href="https://docs.microsoft.com/azure/data-factory/data-factory-introduction" data-linktype="external">Introduction to Azure Data Factory</a>.</span></span></li>
+</ul>
+<h2 id="data-formats-for-import-and-export"><span data-ttu-id="044ed-131">Formatos de dados para importação e exportação</span><span class="sxs-lookup"><span data-stu-id="044ed-131">Data formats for import and export</span></span></h2>
+<h3 id="supported-formats"><span data-ttu-id="044ed-132">Formatos com suporte</span><span class="sxs-lookup"><span data-stu-id="044ed-132">Supported formats</span></span></h3>
+<p><span data-ttu-id="044ed-133">Importe e exporte dados para arquivos simples ou uma variedade de outros formatos de arquivo, bancos de dados relacionais e serviços de nuvem.</span><span class="sxs-lookup"><span data-stu-id="044ed-133">You can import data from, and export data to, flat files or a variety of other file formats, relational databases, and cloud services.</span></span> <span data-ttu-id="044ed-134">Para saber mais sobre essas opções de ferramentas específicas, consulte os seguintes tópicos</span><span class="sxs-lookup"><span data-stu-id="044ed-134">To learn more about these options for specific tools, see the following topics</span></span></p>
+<ul>
+<li><span data-ttu-id="044ed-135">Para o Assistente para Importação e Exportação do SQL Server, consulte <a href="../../integration-services/import-export-data/connect-to-data-sources-with-the-sql-server-import-and-export-wizard?view=sql-server-ver15" data-linktype="relative-path">Conectar-se a fontes de dados com o Assistente para Importação e Exportação do SQL Server</a>.</span><span class="sxs-lookup"><span data-stu-id="044ed-135">For the SQL Server Import and Export Wizard, see <a href="../../integration-services/import-export-data/connect-to-data-sources-with-the-sql-server-import-and-export-wizard?view=sql-server-ver15" data-linktype="relative-path">Connect to Data Sources with the SQL Server Import and Export Wizard</a>.</span></span></li>
+<li><span data-ttu-id="044ed-136">Para o SQL Server Integration Services, consulte <a href="../../integration-services/connection-manager/integration-services-ssis-connections?view=sql-server-ver15" data-linktype="relative-path">Conexões do SSIS (Integration Services)</a>.</span><span class="sxs-lookup"><span data-stu-id="044ed-136">For SQL Server Integration Services, see <a href="../../integration-services/connection-manager/integration-services-ssis-connections?view=sql-server-ver15" data-linktype="relative-path">Integration Services (SSIS) Connections</a>.</span></span></li>
+<li><span data-ttu-id="044ed-137">Para o Azure Data Factory, consulte <a href="https://docs.microsoft.com/azure/data-factory/data-factory-amazon-redshift-connector" data-linktype="external">Conectores do Azure Data Factory</a>.</span><span class="sxs-lookup"><span data-stu-id="044ed-137">For Azure Data Factory, see <a href="https://docs.microsoft.com/azure/data-factory/data-factory-amazon-redshift-connector" data-linktype="external">Azure Data Factory Connectors</a>.</span></span></li>
+</ul>
+<h3 id="commonly-used-data-formats"><span data-ttu-id="044ed-138">Formatos de dados usados com frequência</span><span class="sxs-lookup"><span data-stu-id="044ed-138">Commonly used data formats</span></span></h3>
+<p><span data-ttu-id="044ed-139">Há considerações especiais e exemplos disponíveis para alguns formatos de dados usados com frequência.</span><span class="sxs-lookup"><span data-stu-id="044ed-139">There are special considerations and examples available for some commonly-used data formats.</span></span> <span data-ttu-id="044ed-140">Para saber mais sobre esses formatos de dados, consulte os seguintes tópicos:</span><span class="sxs-lookup"><span data-stu-id="044ed-140">To learn more about these data formats, see the following topics:</span></span></p>
+<ul>
+<li><span data-ttu-id="044ed-141">Para o Excel, consulte <a href="import-data-from-excel-to-sql?view=sql-server-ver15" data-linktype="relative-path">Importar do Excel</a>.</span><span class="sxs-lookup"><span data-stu-id="044ed-141">For Excel, see <a href="import-data-from-excel-to-sql?view=sql-server-ver15" data-linktype="relative-path">Import from Excel</a>.</span></span></li>
+<li><span data-ttu-id="044ed-142">Para o JSON, consulte <a href="../json/import-json-documents-into-sql-server?view=sql-server-ver15" data-linktype="relative-path">Importar documentos JSON</a>.</span><span class="sxs-lookup"><span data-stu-id="044ed-142">For JSON, see <a href="../json/import-json-documents-into-sql-server?view=sql-server-ver15" data-linktype="relative-path">Import JSON Documents</a>.</span></span></li>
+<li><span data-ttu-id="044ed-143">Para o XML, consulte <a href="examples-of-bulk-import-and-export-of-xml-documents-sql-server?view=sql-server-ver15" data-linktype="relative-path">Importar e exportar documentos XML</a>.</span><span class="sxs-lookup"><span data-stu-id="044ed-143">For XML, see <a href="examples-of-bulk-import-and-export-of-xml-documents-sql-server?view=sql-server-ver15" data-linktype="relative-path">Import and Export XML Documents</a>.</span></span></li>
+<li><span data-ttu-id="044ed-144">Para o Armazenamento de Blobs do Azure, consulte <a href="examples-of-bulk-access-to-data-in-azure-blob-storage?view=sql-server-ver15" data-linktype="relative-path">Importar e exportar do Armazenamento de Blobs do Azure</a>.</span><span class="sxs-lookup"><span data-stu-id="044ed-144">For Azure Blob Storage, see <a href="examples-of-bulk-access-to-data-in-azure-blob-storage?view=sql-server-ver15" data-linktype="relative-path">Import and Export from Azure Blob Storage</a>.</span></span></li>
+</ul>
+<h2 id="next-steps"><span data-ttu-id="044ed-145">Próximas etapas</span><span class="sxs-lookup"><span data-stu-id="044ed-145">Next steps</span></span></h2>
+<p><span data-ttu-id="044ed-146">Caso não tenha certeza de onde começar com a tarefa de importação ou exportação, considere a possibilidade de usar o Assistente para Importação e Exportação do SQL Server.</span><span class="sxs-lookup"><span data-stu-id="044ed-146">If you're not sure where to begin with your import or export task, consider the SQL Server Import and Export Wizard.</span></span> <span data-ttu-id="044ed-147">Para obter uma introdução rápida, consulte <a href="../../integration-services/import-export-data/get-started-with-this-simple-example-of-the-import-and-export-wizard?view=sql-server-ver15" data-linktype="relative-path">Começar com este exemplo simples do Assistente para Importação e Exportação</a>.</span><span class="sxs-lookup"><span data-stu-id="044ed-147">For a quick introduction, see <a href="../../integration-services/import-export-data/get-started-with-this-simple-example-of-the-import-and-export-wizard?view=sql-server-ver15" data-linktype="relative-path">Get started with this simple example of the Import and Export Wizard</a>.</span></span></p>
+
+						<!-- </content> -->
+
+						</main>
+
+						<!-- recommended content page section -->
+
+							<nav data-bi-name="recommendation-bottom" hidden id="recommended-content-center" class="is-hidden-desktop" aria-labelledby="recommended-content-center-title">
+								<h3 id="recommended-content-center-title" class="is-size-2 has-margin-top-large has-margin-bottom-small">Veja também</h3>
+							</nav>
+
+						<!-- end recommended content page section -->
+
+						<!-- rating mobile section -->
+								<div class="is-hidden-desktop has-border-top has-margin-top-large has-padding-top-small">
+									
+<div data-bi-name="rating" class="feedback-verbatim has-border-bottom has-padding-bottom-small has-margin-bottom-small">
+	<div class="binary-rating">
+		<div class="binary-rating-buttons">
+			<h3 class="has-text-weight-semibold has-margin-top-none has-margin-bottom-small">Esta página é útil?</h3>
+			<div>
+				<button class="thumb-rating like has-inner-focus has-padding-left-extra-small has-padding-right-extra-small" title="Sim" data-bi-name="rating-yes" data-bi-sat="1">
+					<span class="icon docon docon-like" aria-hidden="true"></span><span>Sim</span>
+				</button>
+				<button class="thumb-rating dislike has-inner-focus has-padding-none has-padding-right-extra-small" title="Não" data-bi-name="rating-no" data-bi-sat="0" aria-expanded="false" aria-haspopup="true" aria-controls="rating-feedback">
+					<span class="icon docon docon-dislike" aria-hidden="true"></span><span>Não</span>
+				</button>
+			</div>
+		</div>
+		<form class="feedback-verbatim-form is-hidden">
+			<div class="verbatim-textarea box is-relative has-box-shadow-none has-border has-margin-top-small has-padding-extra-small is-size-8">
+				<label for="rating-textarea-mobile" class="visually-hidden">Algum comentário adicional?</label>
+				<textarea id="rating-textarea-mobile" rows="4" maxlength="999" placeholder="Algum comentário adicional?" required class="textarea has-border-none has-box-shadow-none has-inner-focus"></textarea>
+			</div>
+			<div class="buttons is-right has-margin-top-medium has-margin-right-extra-small">
+				<button class="skip-rating button is-text is-link is-small" type="button">Ignorar</button>
+				<button disabled class="submit-rating button is-primary is-small" type="submit" data-bi-name="rating-verbatim">Enviar</button>
+			</div>
+		</form>
+	</div>
+	<div class="thankyou-rating is-hidden">
+		<p>Obrigado.</p>
+	</div>
+</div>								</div>
+						<!-- end rating mobile section -->
+
+						<!-- feedback section -->
+
+
+
+<section class="feedback-section" data-bi-name="feedback-section">
+
+	<h2 id="feedback">Comentários</h2>
+
+	<div class="alert choose-feedback-type">
+		<p id="send-feedback-about" aria-hidden="true">Enviar comentários sobre</p>
+
+		<div class="choose-feedback-buttons">
+			<a class="button feedback-type-product has-margin-bottom-small" aria-label="Enviar comentários sobre este produto" href="https://feedback.azure.com/forums/908035-sql-server/" data-bi-name="product-feedback">
+				<span>Este produto</span>
+				<span class="icon docon docon-navigate-external" aria-hidden="true"></span>
+			</a>
+
+			<div class="field has-addons is-inline-flex has-margin-bottom-small">
+				<div class="control has-margin-top-none has-margin-bottom-none">
+					<button class="button feedback-sign-in-button has-text-wrap" aria-label="Enviar comentários sobre esta página" data-bi-name="feedback-sign-in">
+						<span class="icon docon docon-brand-github" aria-hidden="true"></span>
+						<span>Esta página</span>
+					</button>
+				</div>
+				<div class="control dropdown has-caret has-margin-top-none has-margin-bottom-none">
+					<button class="button dropdown-trigger is-full-height" aria-describedby="send-feedback-about" aria-expanded="false" aria-controls="fbm0" aria-label="Opções de comentários adicionais" data-bi-name="documentation-feedback-menu">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-chevron-down-light expanded-indicator"></span>
+						</span>
+					</button>
+					<div id="fbm0" class="dropdown-menu documentation-feedback-menu">
+						Você também pode deixar comentários diretamente no <a data-bi-name="create-issue-on-github">GitHub <span class="docon docon-navigate-external" aria-hidden="true"></span></a>.					</div>
+				</div>
+			</div>
+
+			<div class="field has-addons is-inline-flex has-margin-bottom-small" hidden>
+				<div class="control has-margin-top-none has-margin-bottom-none">
+					<button class="button feedback-form-toggle" aria-describedby="send-feedback-about" aria-expanded="false" aria-controls="feedback-form"
+						data-bi-name="documentation-feedback">
+Esta página					</button>
+				</div>
+				<div class="control dropdown has-caret has-margin-top-none has-margin-bottom-none">
+					<button class="button dropdown-trigger" aria-describedby="send-feedback-about" aria-expanded="false" aria-controls="fbm1" aria-label="Opções de comentários adicionais" data-bi-name="documentation-feedback-menu">
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-chevron-down-light expanded-indicator"></span>
+						</span>
+					</button>
+					<div id="fbm1" class="dropdown-menu documentation-feedback-menu">
+						Você também pode deixar comentários diretamente no <a data-bi-name="create-issue-on-github">GitHub <span class="docon docon-navigate-external" aria-hidden="true"></span></a>.					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<form class="feedback-form" id="feedback-form" accept-charset="UTF-8" autocomplete="off" action="javascript:" hidden>
+		<h3 class="feedback-form-heading current-user">
+			<img class="avatar" alt="Avatar" width="36" height="36" aria-hidden="true">
+			<span class="username" aria-hidden="true"></span>
+			<span class="visually-hidden">Enviar comentários sobre esta página</span>
+		</h3>
+
+		<label>
+			<span class="visually-hidden">Título</span>
+			<input class="input is-radiusless has-margin-bottom-small" name="title" type="text" placeholder="Título" required pattern=".*[^\s]+.*">
+		</label>
+		<label>
+			<span class="visually-hidden">Deixe um comentário</span>
+			<textarea name="body" placeholder="Deixe um comentário" class="textarea is-radiusless" required></textarea>
+		</label>
+
+		<div class="action-container">
+			<button class="button is-primary" type="submit" name="submit">Enviar comentários</button>
+		</div>
+	</form>
+
+	<div class="feedback-status alert is-loading">
+		<p>Carregando comentários...</p>
+	</div>
+
+	<div class="feedback-tab-group tabGroup" data-tab-group-independent hidden>
+		<ul role="tablist">
+			<li role="presentation">
+				<a href="#tabpanel-issues-open" role="tab" aria-controls="tabpanel-issues-open" data-tab="issues-open"></a>
+			</li>
+			<li role="presentation">
+				<a href="#tabpanel-issues-closed" role="tab" aria-controls="tabpanel-issues-closed" data-tab="issues-closed"></a>
+			</li>
+		</ul>
+		<section id="tabpanel-issues-open" role="tabpanel" data-tab="issues-open">
+			<div class="no-issues-placeholder">Não há problemas em aberto</div>
+			<ul class="github-issues-list" aria-label="Problemas Abertos"></ul>
+		</section>
+		<section id="tabpanel-issues-closed" role="tabpanel" data-tab="issues-closed">
+			<div class="no-issues-placeholder">Não há problemas fechados</div>
+			<ul class="github-issues-list" aria-label="Problemas Fechados"></ul>
+		</section>
+	</div>
+	<div class="action-container">
+		<a class="view-on-github" href="https://github.com/MicrosoftDocs/sql-docs.pt-br/issues" data-bi-name="view-on-github"
+		 hidden>
+			<span class="docon docon-brand-github" aria-hidden="true"></span>
+			<span>Exibir no GitHub</span>
+			<span class="docon docon-navigate-external" aria-hidden="true"></span>
+		</a>
+	</div>
+</section>
+
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+						<div class="footerContainer is-visible-interactive has-default-focus ">
+<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="#" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text has-inner-focus"></span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Documentos de versões anteriores</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Contribuir</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacidade e Cookies</a></li>
+		<li><a data-mscc-ic="false" href="/pt-br/legal/termsofuse" data-bi-name="termsofuse">Termos de Uso</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Comentários do site</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Marcas Comerciais</a></li>
+    </ul>
+</footer>
+						</div>
+					</div>
+
+					<div class="is-size-7 right-container column is-one-quarter is-one-fifth-desktop is-hidden-mobile is-hidden-tablet-only" data-bi-name="pageactions" role="complementary" aria-label="Ações da página">
+						<div id="affixed-right-container" class="doc-outline is-fixed is-vertically-scrollable">
+								
+<div data-bi-name="rating" class="feedback-verbatim has-border-bottom has-padding-bottom-small has-margin-bottom-small">
+	<div class="binary-rating">
+		<div class="binary-rating-buttons">
+			<h3 class="has-text-weight-semibold has-margin-top-none has-margin-bottom-small">Esta página é útil?</h3>
+			<div>
+				<button class="thumb-rating like has-inner-focus has-padding-left-extra-small has-padding-right-extra-small" title="Sim" data-bi-name="rating-yes" data-bi-sat="1">
+					<span class="icon docon docon-like" aria-hidden="true"></span><span>Sim</span>
+				</button>
+				<button class="thumb-rating dislike has-inner-focus has-padding-none has-padding-right-extra-small" title="Não" data-bi-name="rating-no" data-bi-sat="0" aria-expanded="false" aria-haspopup="true" aria-controls="rating-feedback">
+					<span class="icon docon docon-dislike" aria-hidden="true"></span><span>Não</span>
+				</button>
+			</div>
+		</div>
+		<form class="feedback-verbatim-form is-hidden">
+			<div class="verbatim-textarea box is-relative has-box-shadow-none has-border has-margin-top-small has-padding-extra-small is-size-8">
+				<label for="rating-textarea-desktop" class="visually-hidden">Algum comentário adicional?</label>
+				<textarea id="rating-textarea-desktop" rows="4" maxlength="999" placeholder="Algum comentário adicional?" required class="textarea has-border-none has-box-shadow-none has-inner-focus"></textarea>
+			</div>
+			<div class="buttons is-right has-margin-top-medium has-margin-right-extra-small">
+				<button class="skip-rating button is-text is-link is-small" type="button">Ignorar</button>
+				<button disabled class="submit-rating button is-primary is-small" type="submit" data-bi-name="rating-verbatim">Enviar</button>
+			</div>
+		</form>
+	</div>
+	<div class="thankyou-rating is-hidden">
+		<p>Obrigado.</p>
+	</div>
+</div>								<nav data-bi-name="recommendation-sidebar" hidden id="recommended-content-nav" role="navigation" aria-labelledby="recommended-content-nav-title">
+									<h3 id="recommended-content-nav-title">Veja também</h3>
+								</nav>
+							<nav id="side-doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="Estrutura de tópicos do artigo">
+								<h3>Neste artigo</h3>
+							</nav>
+						</div>
+					</div>
+
+					<!--end of div.columns -->
+				</div>
+
+			<!--end of .primary-holder -->
+			</section>
+
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+		</div>
+
+		<!--end of .mainContainer -->
+	</div>
+
+	<div id="openFeedbackContainer" class="openfeedback-container"></div>
+
+	<div class="footerContainer has-default-focus is-hidden-interactive ">
+<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="#" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small" aria-hidden="true"></span><span class="local-selector-link-text"></span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Documentos de versões anteriores</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Contribuir</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacidade e Cookies</a></li>
+		<li><a data-mscc-ic="false" href="/pt-br/legal/termsofuse" data-bi-name="termsofuse">Termos de Uso</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Comentários do site</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Marcas Comerciais</a></li>
+    </ul>
+</footer>
+	</div>
+
+	<div id="action-panel" role="region" aria-label="Painel de ação" class="action-panel has-default-focus" tabindex="-1"></div>
+</body>
+</html>

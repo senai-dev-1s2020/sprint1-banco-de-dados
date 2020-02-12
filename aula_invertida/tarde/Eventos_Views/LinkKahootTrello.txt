@@ -1,0 +1,5 @@
+LINK KAHOOT:
+https://create.kahoot.it/share/eventos-e-views/5bd0df45-dfdd-42c2-bc14-5e990fc34fa9
+
+LINK TRELLO:
+https://trello.com/b/t0wv0gfp/aula-de-sql-eventos-e-views

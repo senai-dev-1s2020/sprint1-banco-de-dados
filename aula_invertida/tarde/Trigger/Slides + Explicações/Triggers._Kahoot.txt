@@ -1,0 +1,29 @@
+O que são TRIGGERS?
+
+	-Um trigger é um tipo especial de procedimento armazenado, que é executado sempre que há uma tentativa de modificar 
+	os dados de uma tabela com métodos DML (UPDATE,DELETE,INSERT);
+
+	-Automatiza um processo repetitivo ao realizar alguma requisição, como por exemplo, sempre que acrescentar/modificar/deletar
+	algum registro da tabela, mostrar o que foi alterado com SELECT;
+
+
+
+
+AFTER:
+	-AFTER especifica que o acionador DML é acionado apenas quando todas as operações 
+	especificadas na instrução SQL de acionamento foram executadas com êxito.
+
+
+
+FOR:
+	-FOR é o valor padrão e faz com o que o gatilho seja disparado junto da ação.
+
+
+
+INSTEAD OF:
+	-INSTEAD OF faz com que o trigger seja executado no lugar da ação que o gerou. (Ao invés de).
+
+
+Característica: 
+	-Visualmente, FOR e AFTER não possuem diferença.
+

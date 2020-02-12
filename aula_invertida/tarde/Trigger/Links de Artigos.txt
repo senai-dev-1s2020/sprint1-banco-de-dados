@@ -1,0 +1,9 @@
+Introdução TRIGGERS (DEVMEDIA):
+https://www.devmedia.com.br/introducao-a-triggers/1695
+
+Teoria e Prática aplicada (DEVMEDIA):
+https://www.devmedia.com.br/triggers-no-sql-server-teoria-e-pratica-aplicada-em-uma-situacao-real/28194
+
+Criando TRIGGERS com exemplos mais complexos (SQL SERVER Tutorial (em inglês)):
+https://www.sqlservertutorial.net/sql-server-triggers/sql-server-create-trigger/
+

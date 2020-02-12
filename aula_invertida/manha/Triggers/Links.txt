@@ -1,0 +1,24 @@
+INTRODUAÇÃO A TRIGGERS
+https://www.devmedia.com.br/introducao-a-triggers/1695
+
+https://www.devmedia.com.br/triggers-no-sql-server-teoria-e-pratica-aplicada-em-uma-situacao-real/28194
+
+http://www.macoratti.net/sql_trig.htm
+
+CREATE TRIGGER
+https://docs.microsoft.com/pt-br/sql/t-sql/statements/create-trigger-transact-sql?view=sql-server-ver15
+
+DML TRIGGERS
+https://docs.microsoft.com/pt-br/sql/relational-databases/triggers/dml-triggers?view=sql-server-ver15
+
+CREATE DML TRIGGERS
+https://docs.microsoft.com/pt-br/sql/relational-databases/triggers/create-dml-triggers?view=sql-server-ver15
+
+ALTER TRIGGER
+https://docs.microsoft.com/pt-br/sql/t-sql/statements/alter-trigger-transact-sql?view=sql-server-ver15
+
+DDL TRIGGERS
+https://docs.microsoft.com/pt-br/sql/relational-databases/triggers/ddl-triggers?view=sql-server-ver15
+
+DROP TRIGGER
+https://docs.microsoft.com/pt-br/sql/t-sql/statements/drop-trigger-transact-sql?view=sql-server-ver15

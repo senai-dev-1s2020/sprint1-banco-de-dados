@@ -1,0 +1,42 @@
+EVENTOS ESTENDIDOS SQL SERVER
+
+Obs: um evento é algo que pode estar acontecendo no sistema ou que vai acontecer.*
+
+O que é:*
+
+Os eventos estendidos são um sistema de monitoramento de desempenho leve que permite aos usuários coletar os dados necessários para monitorar e solucionar problemas no SQL Server. 
+
+Diferenças entre os eventos estendidos do sql server para o sql do Azure:*
+
+- O Banco de dados SQL V12 recebeu o recurso de eventos estendidos na segunda metade de 2015;
+- O SQL SERVER já tem eventos estendidos desde 2008;
+- O conjunto de rcursos de eventos estendidos no Banco de dados SQL é um subconjunto robusto dos recursos do SQL Server.
+
+Beneficios:*
+
+Usando os eventos estendidos, é possível ver detalhes sobre as operações internas do sistema SQL e de seu aplicativo.
+Quando você cria uma sessão de eventos estendidos, você informa o sistema:
+
+- Das ocorrencias que lhe interessam;
+- Como você deseja que o sistema relate os dados para você.
+
+Arquitetura de eventos estendidos:*
+
+A infraestrutura de Eventos Estendidos oferece suporte à correlação de dados do SQL Servere, em certas condições, à correlação de dados entre sistema operacional e aplicativos de banco de dados. No caso do sistema operacional, a saída de Eventos 
+Estendidos deve ser direcionada para o ETW (Rastreamento de Eventos para Windows). O ETW ainda 
+pode correlacionar os dados de eventos com o sistema operacional ou os dados de eventos de aplicativos.
+Todos os aplicativos têm pontos de execução que são úteis dentro e fora de um aplicativo. Dentro do aplicativo, o processamento assíncrono pode ser enfileirado usando informações coletadas durante a execução inicial de uma tarefa. 
+Fora do aplicativo, os pontos de execução fornecem informações aos utilitários de monitoramento. As informações são sobre as características de comportamento e de desempenho do aplicativo monitorado.
+
+O sistema Eventos Estendidos oferece suporte a dados de evento fora de um processo. Esses dados são geralmente usados por:
+
+- Ferramentas de rastreamento, como o Rastreamento do SQL e o Monitor do Sistema;
+- Ferramentas de log, como o log de eventos do windows ou o log de errros do SQL Server.
+
+Obs: O log de erros d SQL Server contém eventos definidos pelo usuário e alguns eventos do sistema que podem ser usados para a solução de problemas.
+
+Os Eventos Estendidos têm os estes aspectos de design principais:
+
+- O mecanismo Eventos Estendidos é agnóstico. Já que não é restrito ao conteúdo do evento, o mecanismo pode associar qualquer evento a qualquer destino;
+- Os eventos são separados dos consumidores de evento, que são chamados destinos em Eventos Estendidos. Isso significa que qualquer destino pode receber qualquer evento. Além disso, qualquer evento gerado pode ser consumido 
+automaticamente pelo destino, que pode registrar em log ou fornecer contexto de evento adicional.

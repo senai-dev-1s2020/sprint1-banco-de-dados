@@ -1,0 +1,1 @@
+# Normaliza-o-Indice
