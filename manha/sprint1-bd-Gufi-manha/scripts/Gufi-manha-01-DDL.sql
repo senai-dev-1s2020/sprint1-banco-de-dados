@@ -1,4 +1,4 @@
--- Cria o banco de dados com o nome Gufi
+-- Cria o banco de dados com o nome Gufi_Manha
 CREATE DATABASE Gufi_Manha;
 GO
 
@@ -6,7 +6,7 @@ GO
 USE Gufi_Manha;
 GO
 
--- Criação das tabelas
+-- Cria as tabelas no banco de dados
 CREATE TABLE TipoUsuario (
 	IdTipoUsuario INT PRIMARY KEY IDENTITY
 	,TituloTipoUsuario VARCHAR (255) NOT NULL UNIQUE

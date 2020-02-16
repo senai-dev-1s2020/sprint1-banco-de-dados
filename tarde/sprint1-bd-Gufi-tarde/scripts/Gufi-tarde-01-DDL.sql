@@ -1,10 +1,12 @@
--- CRIA O BANCO DE DADOS
+-- Cria o banco de dados com o nome Gufi_Tarde
 CREATE DATABASE Gufi_Tarde;
+GO
 
--- DEFINE QUAL BANCO DE DADOS ESTÁ SENDO UTILIZADO
+-- Define o banco de dados que será utilizado
 USE Gufi_Tarde;
+GO
 
--- CRIA AS TABELAS DO BANCO DE DADOS
+-- Cria as tabelas no banco de dados
 CREATE TABLE TipoUsuario (
 	IdTipoUsuario INT PRIMARY KEY IDENTITY
 	,TituloTipoUsuario VARCHAR (255) NOT NULL UNIQUE

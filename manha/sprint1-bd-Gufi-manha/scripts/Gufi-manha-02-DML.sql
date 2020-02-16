@@ -32,5 +32,5 @@ GO
 INSERT INTO Presenca	(IdUsuario, IdEvento, Situacao)
 VALUES					(2, 2, 'Confirmada')
 						,(2, 3, 'Não confirmada')
-						,(2, 1, 'Confirmada');
+						,(3, 1, 'Confirmada');
 GO
