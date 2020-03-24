@@ -16,13 +16,13 @@ GO
 CREATE TABLE Usuarios(
 	IdUsuario		INT PRIMARY KEY IDENTITY,
 	Nome			VARCHAR (150) NOT NULL,
-	TipoUsuario		INT FOREIGN KEY REFERENCES TiposUsuario (IdTipoUsuario)
+	TipoUsuario		INT FOREIGN KEY REFERENCES TiposUsuario(IdTipoUsuario)
 );
 GO
 
 -- Insere dois tipos de usuário
 INSERT INTO TiposUsuario (Titulo)
-VALUES					 ('Administrador'), ('Comum');
+VALUES					 ('Administrador'), ('Comum'), ('Moderador');
 GO
 
 -- Insere dois usuários
@@ -45,16 +45,17 @@ SELECT IdUsuario, Nome, TipoUsuario FROM Usuarios;
 SELECT IdUsuario, Nome, Titulo FROM Usuarios
 -- JOIN TiposUsuario OU
 INNER JOIN TiposUsuario
+--			NULL		=				1, 2 OU 3 ? X
 ON Usuarios.TipoUsuario = TiposUsuario.IdTipoUsuario;
 
 -- Lista todos os usuários mostrando as informações do tipo de usuário
--- mesmo que um usuário não tenha um tipo definido
+-- mesmo que um usuário não tenha tipo definido
 SELECT IdUsuario, Nome, Titulo FROM Usuarios
 LEFT JOIN TiposUsuario
 ON Usuarios.TipoUsuario = TiposUsuario.IdTipoUsuario;
 
 -- Lista os usuários mostrando as informações do tipo de usuário
--- mesmo que um tipo de usuário sem um usuário definido
+-- e todos os tipos de usuário, mesmo que não tenha um usuário pra este tipo
 SELECT IdUsuario, Nome, Titulo FROM Usuarios
 RIGHT JOIN TiposUsuario
 ON Usuarios.TipoUsuario = TiposUsuario.IdTipoUsuario;
