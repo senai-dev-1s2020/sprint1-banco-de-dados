@@ -14,7 +14,7 @@ VALUES					('C#')
 GO
 
 INSERT INTO Instituicao	(CNPJ, NomeFantasia, Endereco)
-VALUES					('11111111111111', 'Escola SENAI de Informática', 'Alameda Barão de Limeira, 538');
+VALUES					('03774819008189', 'Escola SENAI de Informática', 'Alameda Barão de Limeira, 539 - Santa Cecília');
 GO
 
 INSERT INTO Usuario	(IdTipousuario, NomeUsuario, Email, Senha, DataCadastro, Genero)

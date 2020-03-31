@@ -39,14 +39,14 @@ CREATE TABLE Evento (
 	,NomeEvento VARCHAR (255) NOT NULL
 	,DataEvento DATETIME2 NOT NULL
 	,Descricao VARCHAR (255) NOT NULL
-	,AcessoLivre BIT DEFAULT (1) NOT NULL
+	,AcessoLivre BIT DEFAULT (1)
 	,IdInstituicao INT FOREIGN KEY REFERENCES Instituicao (IdInstituicao)
 	,IdTipoEvento INT FOREIGN KEY REFERENCES TipoEvento (IdTipoEvento)
 );
 
 CREATE TABLE Presenca (
 	IdPresenca INT PRIMARY KEY IDENTITY
-	,IdUsuario INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
-	,IdEvento INT FOREIGN KEY REFERENCES Evento (IdEvento)
+	,IdUsuario INT FOREIGN KEY REFERENCES Usuario (IdUsuario) NOT NULL
+	,IdEvento INT FOREIGN KEY REFERENCES Evento (IdEvento) NOT NULL
 	,Situacao VARCHAR (255) NOT NULL
 );

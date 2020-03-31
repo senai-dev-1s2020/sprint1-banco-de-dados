@@ -57,6 +57,8 @@ SELECT
 	,E.DataEvento
 	,E.AcessoLivre
 	,E.Descricao
+	,I.NomeFantasia AS [Local]
+	,I.Endereco
 FROM Evento E
 INNER JOIN TipoEvento TE
 ON E.IdTipoEvento = TE.IdTipoEvento
@@ -72,6 +74,8 @@ SELECT
 	,E.DataEvento
 	,E.AcessoLivre
 	,E.Descricao
+	,I.NomeFantasia AS [Local]
+	,I.Endereco
 FROM Evento E
 INNER JOIN TipoEvento TE
 ON E.IdTipoEvento = TE.IdTipoEvento
@@ -88,9 +92,9 @@ SELECT
 	,E.DataEvento
 	,E.AcessoLivre
 	,E.Descricao
-	,I.NomeFantasia
+	,I.NomeFantasia AS [Local]
 	,I.Endereco
-	,U.NomeUsuario AS Usuario,
+	,U.NomeUsuario AS Participante,
 	TU.TituloTipoUsuario AS Perfil,
 	U.Email
 FROM Presenca P
@@ -114,6 +118,8 @@ SELECT
 	,E.DataEvento
 	,CASE WHEN E.AcessoLivre = 1 THEN 'Público' ELSE 'Privado' END AS Acesso
 	,E.Descricao
+	,I.NomeFantasia AS [Local]
+	,I.Endereco
 FROM Evento E
 INNER JOIN TipoEvento TE
 ON E.IdTipoEvento = TE.IdTipoEvento
@@ -128,9 +134,9 @@ SELECT
 	,E.DataEvento
 	,CASE E.AcessoLivre WHEN 1 THEN 'Público' WHEN 0 THEN 'Privado' END AS Acesso
 	,E.Descricao
-	,I.NomeFantasia
+	,I.NomeFantasia AS [Local]
 	,I.Endereco
-	,U.NomeUsuario AS Usuario,
+	,U.NomeUsuario AS Participante,
 	TU.TituloTipoUsuario AS Perfil,
 	U.Email
 FROM Presenca P

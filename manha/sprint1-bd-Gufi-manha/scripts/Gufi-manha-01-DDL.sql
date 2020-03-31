@@ -43,7 +43,7 @@ CREATE TABLE Evento (
 	,NomeEvento VARCHAR (255) NOT NULL
 	,DataEvento DATETIME2 NOT NULL
 	,Descricao VARCHAR (255) NOT NULL
-	,AcessoLivre BIT DEFAULT (1) NOT NULL
+	,AcessoLivre BIT DEFAULT (1)
 	,IdInstituicao INT FOREIGN KEY REFERENCES Instituicao (IdInstituicao)
 	,IdTipoEvento INT FOREIGN KEY REFERENCES TipoEvento (IdTipoEvento)
 );
